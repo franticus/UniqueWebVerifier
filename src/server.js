@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const multer = require('multer');
 const AdmZip = require('adm-zip');
@@ -7,6 +8,7 @@ const { compareWithCheckedArchive } = require('./unique.js');
 
 const app = express();
 const port = 3001;
+app.use(cors());
 
 const uploadDir = path.join(__dirname, 'uploads');
 const checkedArchiveDir = path.join(__dirname, 'checkedArchive');
