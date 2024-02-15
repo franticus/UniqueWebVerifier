@@ -2,15 +2,23 @@ const fs = require('fs');
 const path = require('path');
 
 function compareText(text1, text2) {
-  const text1Set = new Set(text1.split(''));
-  const text2Set = new Set(text2.split(''));
+  const words1 = text1.split(/\s+/);
+  const words2 = text2.split(/\s+/);
 
-  const commonChars = new Set([...text1Set].filter(char => text2Set.has(char)));
-  const uniqueChars = new Set(
-    [...text1Set, ...text2Set].filter(char => !commonChars.has(char))
+  const text1Words = new Set(words1);
+  const text2Words = new Set(words2);
+
+  const commonWords = new Set(
+    [...text1Words].filter(word => text2Words.has(word))
   );
 
-  const uniquePercentage = (uniqueChars.size / text1Set.size) * 100;
+  const allUniqueWords = new Set([...text1Words, ...text2Words]);
+
+  const uniquePercentage =
+    ((allUniqueWords.size - commonWords.size) /
+      (text1Words.size + text2Words.size)) *
+    100;
+
   return uniquePercentage.toFixed(2);
 }
 

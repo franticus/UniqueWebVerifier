@@ -46,9 +46,7 @@ app.post('/upload', upload.single('siteZip'), async (req, res) => {
       req.file.originalname
     );
     const comparisonResults = compareWithCheckedArchive(newText);
-    // Сортировка результатов по убыванию процентов уникальности
-    comparisonResults.sort((a, b) => b.uniquePercentage - a.uniquePercentage);
-    // Запись результатов в JSON файл
+    comparisonResults.sort((a, b) => a.uniquePercentage - b.uniquePercentage);
     const jsonFilePath = path.join(__dirname, 'comparisonResults.json');
     fs.writeFileSync(jsonFilePath, JSON.stringify(comparisonResults, null, 2));
     console.log(`Comparison results saved to ${jsonFilePath}`);
