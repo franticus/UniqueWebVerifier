@@ -36,8 +36,15 @@ app.get('/', (req, res) => {
   res.send('Welcome to the UniqueWebVerifier!');
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(port, async () => {
+  console.log(`Сервер запущен на порту http://localhost:${port}`);
+
+  try {
+    const open = (await import('open')).default;
+    open('https://uniquewebverifier.netlify.app/');
+  } catch (err) {
+    console.error(`Ошибка при открытии сайта: ${err.message}`);
+  }
 });
 
 app.post('/upload', upload.single('siteZip'), async (req, res) => {

@@ -1,31 +1,43 @@
 [
   {
+    "name": "New_v9_Eleganza_2",
+    "uniquePercentage": 1
+  },
+  {
     "name": "New_v9_Decorum",
-    "uniquePercentage": 0
+    "uniquePercentage": 70
   },
   {
     "name": "New_v9_Estetica",
-    "uniquePercentage": 46
+    "uniquePercentage": 72
   },
   {
-    "name": "New_v9_StarlightGem",
-    "uniquePercentage": 77
+    "name": "New_v9_TravelPros",
+    "uniquePercentage": 73
   },
   {
-    "name": "New_v9_TalentForge",
-    "uniquePercentage": 78
-  },
-  {
-    "name": "New_v9_Ambiance",
-    "uniquePercentage": 79
+    "name": "New_v9_TasteTrek_2",
+    "uniquePercentage": 75
   },
   {
     "name": "New_v9_Reflection",
-    "uniquePercentage": 79
+    "uniquePercentage": 78
+  },
+  {
+    "name": "New_v9_StarlightGem",
+    "uniquePercentage": 78
+  },
+  {
+    "name": "New_v9_TalentForge",
+    "uniquePercentage": 80
+  },
+  {
+    "name": "New_v9_Ambiance",
+    "uniquePercentage": 81
   },
   {
     "name": "New_v9_Aureate",
-    "uniquePercentage": 81
+    "uniquePercentage": 82
   },
   {
     "name": "New_v9_LexiSpeak",
@@ -33,43 +45,47 @@
   },
   {
     "name": "New_v9_Lumiere",
-    "uniquePercentage": 82
-  },
-  {
-    "name": "New_v9_baglady",
-    "uniquePercentage": 82
-  },
-  {
-    "name": "New_v9_bestsleep",
-    "uniquePercentage": 82
+    "uniquePercentage": 85
   },
   {
     "name": "New_v9_babystrollers",
-    "uniquePercentage": 83
+    "uniquePercentage": 85
   },
   {
-    "name": "New_v9_alloyavenue",
-    "uniquePercentage": 84
+    "name": "New_v9_baglady",
+    "uniquePercentage": 85
   },
   {
-    "name": "New_v9_catcasa",
-    "uniquePercentage": 84
-  },
-  {
-    "name": "New_v9_chairify",
-    "uniquePercentage": 84
+    "name": "New_v9_bestsleep",
+    "uniquePercentage": 86
   },
   {
     "name": "New_v9_cozylinens",
-    "uniquePercentage": 84
+    "uniquePercentage": 86
   },
   {
     "name": "New_v9_AgriPure",
-    "uniquePercentage": 85
+    "uniquePercentage": 87
+  },
+  {
+    "name": "New_v9_alloyavenue",
+    "uniquePercentage": 87
   },
   {
     "name": "New_v9_animalstore",
-    "uniquePercentage": 85
+    "uniquePercentage": 87
+  },
+  {
+    "name": "New_v9_catcasa",
+    "uniquePercentage": 87
+  },
+  {
+    "name": "New_v9_chairify",
+    "uniquePercentage": 87
+  },
+  {
+    "name": "New_9_RayVolt",
+    "uniquePercentage": 95
   },
   {
     "name": "New_v9_Maravilha",
@@ -77,7 +93,7 @@
   },
   {
     "name": "New_v9_activeattire",
-    "uniquePercentage": 99
+    "uniquePercentage": 98
   },
   {
     "name": "IQMaze_v3",
