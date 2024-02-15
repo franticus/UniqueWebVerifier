@@ -3,12 +3,18 @@ const multer = require('multer');
 const AdmZip = require('adm-zip');
 const { JSDOM } = require('jsdom');
 const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
 const app = express();
 const port = 3001;
 
-// Настройка Multer для обработки загружаемых файлов
-// Файлы будут временно сохраняться в папке 'uploads'
-const upload = multer({ dest: 'uploads/' });
+// Убедитесь, что директория 'uploads' существует
+const uploadDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir);
+}
+
+const upload = multer({ dest: uploadDir });
 
 app.get('/', (req, res) => {
   res.send('Welcome to the UniqueWebVerifier!');
@@ -18,38 +24,51 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-// Маршрут для загрузки файла
 app.post('/upload', upload.single('siteZip'), (req, res) => {
   if (req.file) {
     console.log('Uploaded: ', req.file.path);
-    unpackAndAnalyzeArchive(req.file.path);
-    res.send(`File uploaded successfully: ${req.file.originalname}`);
+    unpackAndAnalyzeArchive(req.file.path)
+      .then(() =>
+        res.send(`File uploaded successfully: ${req.file.originalname}`)
+      )
+      .catch(error => {
+        console.error('Error processing the file', error);
+        res.status(500).send('Error processing the file');
+      });
   } else {
     res.status(400).send('No file uploaded.');
   }
 });
 
-// Функция для извлечения текста из HTML-файла
-function extractTextFromHtml(htmlContent) {
-  const dom = new JSDOM(htmlContent);
-  const bodyText = dom.window.document.body.textContent || '';
-  return bodyText.trim(); // Возвращаем текст, удалив пробелы в начале и конце
-}
-
-// Функция для генерации хеша текста
-function generateHash(text) {
-  return crypto.createHash('sha256').update(text, 'utf8').digest('hex');
-}
-
-// Функция для распаковки архива и анализа его содержимого
-function unpackAndAnalyzeArchive(filePath) {
+async function unpackAndAnalyzeArchive(filePath) {
   const zip = new AdmZip(filePath);
-  zip.getEntries().forEach(entry => {
+  const zipEntries = zip.getEntries();
+
+  for (const entry of zipEntries) {
     if (entry.entryName.endsWith('.html')) {
-      // Проверяем, является ли файл HTML-документом
-      const content = zip.readAsText(entry); // Читаем содержимое HTML-файла
-      const text = extractTextFromHtml(content); // Извлекаем текст
-      console.log(text); // Выводим извлеченный текст (или здесь можете применить дальнейший анализ)
+      const content = zip.readAsText(entry);
+      const text = extractTextFromHtml(content);
+      await analyzeAndCompareHash(entry.entryName, text); // Обеспечиваем асинхронную обработку
     }
-  });
+  }
+}
+
+function analyzeAndCompareHash(entryName, text) {
+  try {
+    const hash = generateHash(text);
+    const hashes = readHashes();
+
+    if (hash in hashes) {
+      console.log(
+        `Содержимое ${entryName} не уникально. Найдено совпадение: ${hashes[hash]}`
+      );
+    } else {
+      console.log(`Содержимое ${entryName} уникально и сохранено.`);
+      hashes[hash] = entryName;
+      saveHashes(hashes);
+    }
+  } catch (error) {
+    console.error('Ошибка при анализе и сравнении хеша:', error);
+    throw error; // Перебрасываем ошибку для последующей обработки
+  }
 }
