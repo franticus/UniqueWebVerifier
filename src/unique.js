@@ -28,19 +28,6 @@ function compareText(text1, text2) {
   return Math.floor(uniquePercentage.toFixed(2));
 }
 
-function jaccardIndex(setA, setB) {
-  const intersection = new Set([...setA].filter(item => setB.has(item)));
-  const union = new Set([...setA, ...setB]);
-  return intersection.size / union.size;
-}
-
-function compareWithJaccardIndex(text1, text2) {
-  const words1 = new Set(preprocessText(text1));
-  const words2 = new Set(preprocessText(text2));
-  const jaccard = jaccardIndex(words1, words2);
-  return Math.ceil((jaccard * 100).toFixed(2));
-}
-
 function compareWithCheckedArchive(newText) {
   const checkedArchiveDir = path.join(__dirname, 'checkedArchive');
   const files = fs.readdirSync(checkedArchiveDir);
@@ -54,14 +41,9 @@ function compareWithCheckedArchive(newText) {
       if (jsonContent && jsonContent.name && jsonContent.pages) {
         const combinedText = Object.values(jsonContent.pages).join(' ');
         const uniquePercentage = compareText(newText, combinedText);
-        const jaccardPercentage = compareWithJaccardIndex(
-          newText,
-          combinedText
-        );
         results.push({
           name: jsonContent.name,
-          uniquePercentage: uniquePercentage + '%',
-          jaccardPercentage,
+          uniquePercentage: uniquePercentage,
         });
       } else {
         console.error(`Invalid JSON format in file: ${filePath}`);
@@ -82,5 +64,4 @@ function compareWithCheckedArchive(newText) {
 module.exports = {
   compareText,
   compareWithCheckedArchive,
-  compareWithJaccardIndex,
 };

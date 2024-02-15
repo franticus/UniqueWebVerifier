@@ -1,92 +1,82 @@
 [
   {
-    "name": "New_v9_AgriPure",
-    "uniquePercentage": "1%",
-    "jaccardPercentage": 99
-  },
-  {
-    "name": "New_v9_babystrollers",
-    "uniquePercentage": "78%",
-    "jaccardPercentage": 22
-  },
-  {
-    "name": "New_v9_baglady",
-    "uniquePercentage": "80%",
-    "jaccardPercentage": 20
-  },
-  {
-    "name": "New_v9_catcasa",
-    "uniquePercentage": "80%",
-    "jaccardPercentage": 20
-  },
-  {
-    "name": "New_v9_cozylinens",
-    "uniquePercentage": "80%",
-    "jaccardPercentage": 20
-  },
-  {
-    "name": "New_v9_Aureate",
-    "uniquePercentage": "81%",
-    "jaccardPercentage": 19
-  },
-  {
-    "name": "New_v9_alloyavenue",
-    "uniquePercentage": "81%",
-    "jaccardPercentage": 19
-  },
-  {
-    "name": "New_v9_bestsleep",
-    "uniquePercentage": "81%",
-    "jaccardPercentage": 19
-  },
-  {
-    "name": "New_v9_Lumiere",
-    "uniquePercentage": "82%",
-    "jaccardPercentage": 18
-  },
-  {
-    "name": "New_v9_animalstore",
-    "uniquePercentage": "82%",
-    "jaccardPercentage": 18
+    "name": "New_v9_Estetica",
+    "uniquePercentage": 0
   },
   {
     "name": "New_v9_TalentForge",
-    "uniquePercentage": "83%",
-    "jaccardPercentage": 17
-  },
-  {
-    "name": "New_v9_Reflection",
-    "uniquePercentage": "84%",
-    "jaccardPercentage": 16
-  },
-  {
-    "name": "New_v9_StarlightGem",
-    "uniquePercentage": "84%",
-    "jaccardPercentage": 16
+    "uniquePercentage": 78
   },
   {
     "name": "New_v9_Ambiance",
-    "uniquePercentage": "87%",
-    "jaccardPercentage": 13
+    "uniquePercentage": 79
+  },
+  {
+    "name": "New_v9_StarlightGem",
+    "uniquePercentage": 79
   },
   {
     "name": "New_v9_LexiSpeak",
-    "uniquePercentage": "88%",
-    "jaccardPercentage": 12
+    "uniquePercentage": 80
+  },
+  {
+    "name": "New_v9_Reflection",
+    "uniquePercentage": 80
+  },
+  {
+    "name": "New_v9_baglady",
+    "uniquePercentage": 82
+  },
+  {
+    "name": "New_v9_bestsleep",
+    "uniquePercentage": 82
+  },
+  {
+    "name": "New_v9_Aureate",
+    "uniquePercentage": 83
+  },
+  {
+    "name": "New_v9_Lumiere",
+    "uniquePercentage": 83
+  },
+  {
+    "name": "New_v9_babystrollers",
+    "uniquePercentage": 83
+  },
+  {
+    "name": "New_v9_alloyavenue",
+    "uniquePercentage": 84
+  },
+  {
+    "name": "New_v9_animalstore",
+    "uniquePercentage": 84
+  },
+  {
+    "name": "New_v9_cozylinens",
+    "uniquePercentage": 84
+  },
+  {
+    "name": "New_v9_catcasa",
+    "uniquePercentage": 85
+  },
+  {
+    "name": "New_v9_chairify",
+    "uniquePercentage": 85
+  },
+  {
+    "name": "New_v9_AgriPure",
+    "uniquePercentage": 86
   },
   {
     "name": "New_v9_Maravilha",
-    "uniquePercentage": "98%",
-    "jaccardPercentage": 2
+    "uniquePercentage": 96
   },
   {
     "name": "New_v9_activeattire",
-    "uniquePercentage": "98%",
-    "jaccardPercentage": 2
+    "uniquePercentage": 99
   },
   {
     "name": "IQMaze_v3",
-    "uniquePercentage": "100%",
-    "jaccardPercentage": 0
+    "uniquePercentage": 100
   }
 ]
