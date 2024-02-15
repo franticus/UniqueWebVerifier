@@ -17,7 +17,7 @@ if (!fs.existsSync(checkedArchiveDir)) {
   fs.mkdirSync(checkedArchiveDir);
 }
 
-const upload = multer({ dest: uploadDir });
+const upload = multer({ dest: uploadDir }).array('siteZip', 5);
 
 app.get('/', (req, res) => {
   res.send('Welcome to the UniqueWebVerifier!');
@@ -27,14 +27,25 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-app.post('/upload', upload.single('siteZip'), async (req, res) => {
-  if (req.file) {
-    console.log('Uploaded: ', req.file.path);
-    await unpackAndSavePlainText(req.file.path, req.file.originalname);
-    res.send(`File uploaded successfully: ${req.file.originalname}`);
-  } else {
-    res.status(400).send('No file uploaded.');
-  }
+app.post('/upload', (req, res) => {
+  upload(req, res, async err => {
+    if (err instanceof multer.MulterError) {
+      // Обработка ошибок Multer
+      console.error('Multer error:', err);
+      res.status(400).send('Multer error');
+    } else if (err) {
+      // Обработка других ошибок
+      console.error('Other error:', err);
+      res.status(500).send('Server error');
+    } else {
+      // Обработка успешной загрузки
+      console.log('Uploaded files:', req.files);
+      for (const file of req.files) {
+        await unpackAndSavePlainText(file.path, file.originalname);
+      }
+      res.send('Files uploaded successfully');
+    }
+  });
 });
 
 async function unpackAndSavePlainText(filePath, originalFileName) {
