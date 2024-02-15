@@ -1,7 +1,15 @@
 [
   {
-    "name": "New_v9_Estetica",
+    "name": "New_v9_Decorum",
     "uniquePercentage": 0
+  },
+  {
+    "name": "New_v9_Estetica",
+    "uniquePercentage": 46
+  },
+  {
+    "name": "New_v9_StarlightGem",
+    "uniquePercentage": 77
   },
   {
     "name": "New_v9_TalentForge",
@@ -12,16 +20,20 @@
     "uniquePercentage": 79
   },
   {
-    "name": "New_v9_StarlightGem",
+    "name": "New_v9_Reflection",
     "uniquePercentage": 79
   },
   {
-    "name": "New_v9_LexiSpeak",
-    "uniquePercentage": 80
+    "name": "New_v9_Aureate",
+    "uniquePercentage": 81
   },
   {
-    "name": "New_v9_Reflection",
-    "uniquePercentage": 80
+    "name": "New_v9_LexiSpeak",
+    "uniquePercentage": 82
+  },
+  {
+    "name": "New_v9_Lumiere",
+    "uniquePercentage": 82
   },
   {
     "name": "New_v9_baglady",
@@ -32,14 +44,6 @@
     "uniquePercentage": 82
   },
   {
-    "name": "New_v9_Aureate",
-    "uniquePercentage": 83
-  },
-  {
-    "name": "New_v9_Lumiere",
-    "uniquePercentage": 83
-  },
-  {
     "name": "New_v9_babystrollers",
     "uniquePercentage": 83
   },
@@ -48,7 +52,11 @@
     "uniquePercentage": 84
   },
   {
-    "name": "New_v9_animalstore",
+    "name": "New_v9_catcasa",
+    "uniquePercentage": 84
+  },
+  {
+    "name": "New_v9_chairify",
     "uniquePercentage": 84
   },
   {
@@ -56,16 +64,12 @@
     "uniquePercentage": 84
   },
   {
-    "name": "New_v9_catcasa",
-    "uniquePercentage": 85
-  },
-  {
-    "name": "New_v9_chairify",
-    "uniquePercentage": 85
-  },
-  {
     "name": "New_v9_AgriPure",
-    "uniquePercentage": 86
+    "uniquePercentage": 85
+  },
+  {
+    "name": "New_v9_animalstore",
+    "uniquePercentage": 85
   },
   {
     "name": "New_v9_Maravilha",
