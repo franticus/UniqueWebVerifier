@@ -30,27 +30,43 @@ app.listen(port, () => {
 app.post('/upload', upload.single('siteZip'), async (req, res) => {
   if (req.file) {
     console.log('Uploaded: ', req.file.path);
-    await unpackAndSavePlainText(req.file.path);
+    await unpackAndSavePlainText(req.file.path, req.file.originalname);
     res.send(`File uploaded successfully: ${req.file.originalname}`);
   } else {
     res.status(400).send('No file uploaded.');
   }
 });
 
-async function unpackAndSavePlainText(filePath) {
+async function unpackAndSavePlainText(filePath, originalFileName) {
   const zip = new AdmZip(filePath);
   const zipEntries = zip.getEntries();
+
+  // Получаем имя архива без расширения
+  const archiveName = path.basename(
+    originalFileName,
+    path.extname(originalFileName)
+  );
+
+  // Создаем объект для хранения информации о каждой странице
+  const siteData = {
+    name: archiveName, // Используем имя архива без расширения
+    pages: {},
+  };
 
   for (const entry of zipEntries) {
     if (entry.entryName.endsWith('.html')) {
       const content = zip.readAsText(entry);
       const plainText = stripTags(content);
-      const fileName = path.basename(entry.entryName, '.html') + '.txt';
-      const outputPath = path.join(checkedArchiveDir, fileName);
-      fs.writeFileSync(outputPath, plainText);
-      console.log(`PlainText for ${entry.entryName} saved to ${outputPath}`);
+      const pageName = path.basename(entry.entryName, '.html');
+      siteData.pages[pageName] = plainText; // Сохраняем текст страницы в объект
     }
   }
+
+  // Создаем JSON файл и записываем в него данные
+  const jsonFileName = archiveName + '.json'; // Используем имя архива без расширения для JSON файла
+  const jsonFilePath = path.join(checkedArchiveDir, jsonFileName);
+  fs.writeFileSync(jsonFilePath, JSON.stringify(siteData, null, 2));
+  console.log(`JSON file for ${siteData.name} saved to ${jsonFilePath}`);
 
   // Очистка папки uploads после обработки файла
   fs.unlinkSync(filePath);
