@@ -1,30 +1,47 @@
 [
   {
-    "name": "New_v9_bestsleep",
-    "uniquePercentage": "0.00"
-  },
-  {
     "name": "New_v9_baglady",
-    "uniquePercentage": "48.77"
+    "uniquePercentage": "0%",
+    "jaccardPercentage": 100
   },
   {
-    "name": "New_v9_animalstore",
-    "uniquePercentage": "52.02"
+    "name": "New_v9_bestsleep",
+    "uniquePercentage": "61%",
+    "jaccardPercentage": 39
   },
   {
     "name": "New_v9_babystrollers",
-    "uniquePercentage": "52.68"
+    "uniquePercentage": "63%",
+    "jaccardPercentage": 37
+  },
+  {
+    "name": "New_v9_animalstore",
+    "uniquePercentage": "64%",
+    "jaccardPercentage": 36
   },
   {
     "name": "New_v9_alloyavenue",
-    "uniquePercentage": "53.21"
+    "uniquePercentage": "65%",
+    "jaccardPercentage": 35
+  },
+  {
+    "name": "New_v9_cozylinens",
+    "uniquePercentage": "66%",
+    "jaccardPercentage": 34
+  },
+  {
+    "name": "New_v9_catcasa",
+    "uniquePercentage": "73%",
+    "jaccardPercentage": 27
   },
   {
     "name": "New_v9_Lumiere",
-    "uniquePercentage": "68.34"
+    "uniquePercentage": "78%",
+    "jaccardPercentage": 22
   },
   {
     "name": "New_v9_activeattire",
-    "uniquePercentage": "97.89"
+    "uniquePercentage": "99%",
+    "jaccardPercentage": 1
   }
 ]

@@ -46,7 +46,7 @@ app.post('/upload', upload.single('siteZip'), async (req, res) => {
       req.file.originalname
     );
     const comparisonResults = compareWithCheckedArchive(newText);
-    comparisonResults.sort((a, b) => a.uniquePercentage - b.uniquePercentage);
+    comparisonResults.sort((a, b) => b.jaccardPercentage - a.jaccardPercentage);
     const jsonFilePath = path.join(__dirname, 'comparisonResults.json');
     fs.writeFileSync(jsonFilePath, JSON.stringify(comparisonResults, null, 2));
     console.log(`Comparison results saved to ${jsonFilePath}`);
