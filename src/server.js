@@ -46,6 +46,12 @@ app.post('/upload', upload.single('siteZip'), async (req, res) => {
       req.file.originalname
     );
     const comparisonResults = compareWithCheckedArchive(newText);
+    // Сортировка результатов по убыванию процентов уникальности
+    comparisonResults.sort((a, b) => b.uniquePercentage - a.uniquePercentage);
+    // Запись результатов в JSON файл
+    const jsonFilePath = path.join(__dirname, 'comparisonResults.json');
+    fs.writeFileSync(jsonFilePath, JSON.stringify(comparisonResults, null, 2));
+    console.log(`Comparison results saved to ${jsonFilePath}`);
     res.json(comparisonResults);
   } else {
     res.status(400).send('No file uploaded.');
