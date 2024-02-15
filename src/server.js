@@ -3,6 +3,8 @@ const multer = require('multer');
 const AdmZip = require('adm-zip');
 const fs = require('fs');
 const path = require('path');
+const { compareWithCheckedArchive } = require('./unique.js');
+
 const app = express();
 const port = 3001;
 
@@ -17,7 +19,16 @@ if (!fs.existsSync(checkedArchiveDir)) {
   fs.mkdirSync(checkedArchiveDir);
 }
 
-const upload = multer({ dest: uploadDir }).array('siteZip', 5);
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, uploadDir);
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage: storage });
 
 app.get('/', (req, res) => {
   res.send('Welcome to the UniqueWebVerifier!');
@@ -27,25 +38,18 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-app.post('/upload', (req, res) => {
-  upload(req, res, async err => {
-    if (err instanceof multer.MulterError) {
-      // Обработка ошибок Multer
-      console.error('Multer error:', err);
-      res.status(400).send('Multer error');
-    } else if (err) {
-      // Обработка других ошибок
-      console.error('Other error:', err);
-      res.status(500).send('Server error');
-    } else {
-      // Обработка успешной загрузки
-      console.log('Uploaded files:', req.files);
-      for (const file of req.files) {
-        await unpackAndSavePlainText(file.path, file.originalname);
-      }
-      res.send('Files uploaded successfully');
-    }
-  });
+app.post('/upload', upload.single('siteZip'), async (req, res) => {
+  if (req.file) {
+    console.log('Uploaded: ', req.file.path);
+    const newText = await unpackAndSavePlainText(
+      req.file.path,
+      req.file.originalname
+    );
+    const comparisonResults = compareWithCheckedArchive(newText);
+    res.json(comparisonResults);
+  } else {
+    res.status(400).send('No file uploaded.');
+  }
 });
 
 async function unpackAndSavePlainText(filePath, originalFileName) {
@@ -81,6 +85,9 @@ async function unpackAndSavePlainText(filePath, originalFileName) {
 
   // Очистка папки uploads после обработки файла
   fs.unlinkSync(filePath);
+
+  // Возвращаем новый текст для сравнения
+  return Object.values(siteData.pages).join('');
 }
 
 function stripTags(html) {
