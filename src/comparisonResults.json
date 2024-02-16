@@ -1,110 +1,106 @@
 [
   {
-    "name": "New_v9_laminateland",
-    "uniquePercentage": 1
-  },
-  {
-    "name": "New_v9_babystrollers",
-    "uniquePercentage": 76
-  },
-  {
-    "name": "New_v9_baglady",
-    "uniquePercentage": 76
-  },
-  {
-    "name": "New_v9_bestsleep",
-    "uniquePercentage": 77
-  },
-  {
-    "name": "New_v9_chairify",
-    "uniquePercentage": 77
+    "name": "New_v9_boatbay",
+    "uniquePercentage": 0
   },
   {
     "name": "New_v9_cozylinens",
-    "uniquePercentage": 77
-  },
-  {
-    "name": "New_v9_tropicalrattanhome",
-    "uniquePercentage": 77
-  },
-  {
-    "name": "New_v9_alloyavenue",
-    "uniquePercentage": 78
+    "uniquePercentage": 55
   },
   {
     "name": "New_v9_catcasa",
-    "uniquePercentage": 79
+    "uniquePercentage": 58
   },
   {
-    "name": "New_v9_sleeppillowsmattresses",
-    "uniquePercentage": 79
-  },
-  {
-    "name": "New_v9_Ambrosia",
-    "uniquePercentage": 80
-  },
-  {
-    "name": "New_v9_LightRoom",
-    "uniquePercentage": 80
-  },
-  {
-    "name": "New_v9_Streth-celing",
-    "uniquePercentage": 80
-  },
-  {
-    "name": "New_v9_animalstore",
-    "uniquePercentage": 80
+    "name": "New_v9_tropicalrattanhome",
+    "uniquePercentage": 61
   },
   {
     "name": "New_v9_blissfulbakeshop",
-    "uniquePercentage": 80
+    "uniquePercentage": 63
   },
   {
     "name": "New_v9_gifthaven",
-    "uniquePercentage": 80
+    "uniquePercentage": 67
+  },
+  {
+    "name": "New_v9_chairify",
+    "uniquePercentage": 68
+  },
+  {
+    "name": "New_v9_alloyavenue",
+    "uniquePercentage": 69
+  },
+  {
+    "name": "New_v9_sleeppillowsmattresses",
+    "uniquePercentage": 69
+  },
+  {
+    "name": "New_v9_babystrollers",
+    "uniquePercentage": 71
+  },
+  {
+    "name": "New_v9_baglady",
+    "uniquePercentage": 72
   },
   {
     "name": "New_v9_petalpulse",
-    "uniquePercentage": 80
+    "uniquePercentage": 72
   },
   {
-    "name": "New_v9_Aureate",
-    "uniquePercentage": 81
+    "name": "New_v9_animalstore",
+    "uniquePercentage": 73
   },
   {
-    "name": "New_v9_Decorum",
-    "uniquePercentage": 82
+    "name": "New_v9_bestsleep",
+    "uniquePercentage": 73
   },
   {
-    "name": "New_v9_Reflection",
-    "uniquePercentage": 82
+    "name": "New_v9_ElectricWheel",
+    "uniquePercentage": 76
   },
   {
-    "name": "New_v9_StarlightGem",
-    "uniquePercentage": 82
-  },
-  {
-    "name": "New_v9_AgriPure",
-    "uniquePercentage": 83
-  },
-  {
-    "name": "New_v9_CookEase",
-    "uniquePercentage": 83
-  },
-  {
-    "name": "New_v9_Eleganza_2",
-    "uniquePercentage": 83
-  },
-  {
-    "name": "New_v9_Estetica",
-    "uniquePercentage": 83
+    "name": "New_v9_LightRoom",
+    "uniquePercentage": 77
   },
   {
     "name": "New_v9_FTyoga",
-    "uniquePercentage": 83
+    "uniquePercentage": 78
   },
   {
     "name": "New_v9_Lumiere",
+    "uniquePercentage": 79
+  },
+  {
+    "name": "New_v9_Streth-celing",
+    "uniquePercentage": 79
+  },
+  {
+    "name": "New_v9_Reflection",
+    "uniquePercentage": 80
+  },
+  {
+    "name": "New_v9_AgriPure",
+    "uniquePercentage": 81
+  },
+  {
+    "name": "New_v9_StarlightGem",
+    "uniquePercentage": 81
+  },
+  {
+    "name": "New_v9_laminateland",
+    "uniquePercentage": 81
+  },
+  {
+    "name": "New_v9_Ambrosia",
+    "uniquePercentage": 82
+  },
+  {
+    "name": "New_v9_Aureate",
+    "uniquePercentage": 83
+  },
+  {
+    "name": "New_v9_Epoch",
     "uniquePercentage": 83
   },
   {
@@ -112,15 +108,11 @@
     "uniquePercentage": 83
   },
   {
-    "name": "New_v9_Confectionery",
+    "name": "New_v9_Estetica",
     "uniquePercentage": 84
   },
   {
-    "name": "New_v9_TasteTrek_2",
-    "uniquePercentage": 84
-  },
-  {
-    "name": "New_v9_vendings",
+    "name": "New_v9_Viralize",
     "uniquePercentage": 84
   },
   {
@@ -128,36 +120,64 @@
     "uniquePercentage": 85
   },
   {
+    "name": "New_v9_CampCove",
+    "uniquePercentage": 85
+  },
+  {
+    "name": "New_v9_Decorum",
+    "uniquePercentage": 85
+  },
+  {
     "name": "New_v9_Eurotours",
     "uniquePercentage": 85
   },
   {
-    "name": "New_v9_Taxi",
-    "uniquePercentage": 85
-  },
-  {
-    "name": "New_v9_TravelPros",
-    "uniquePercentage": 85
-  },
-  {
-    "name": "New_v9_Viralize",
-    "uniquePercentage": 85
-  },
-  {
-    "name": "New_v9_Ambiance",
+    "name": "New_v9_CookEase",
     "uniquePercentage": 86
   },
   {
-    "name": "New_v9_ExploreHorizon",
-    "uniquePercentage": 87
+    "name": "New_v9_TasteTrek_2",
+    "uniquePercentage": 86
+  },
+  {
+    "name": "New_v9_Taxi",
+    "uniquePercentage": 86
+  },
+  {
+    "name": "New_v9_TravelPros",
+    "uniquePercentage": 86
   },
   {
     "name": "New_v9_insight-hunt",
+    "uniquePercentage": 86
+  },
+  {
+    "name": "New_v9_vendings",
+    "uniquePercentage": 86
+  },
+  {
+    "name": "New_v9_Confectionery",
     "uniquePercentage": 87
   },
   {
+    "name": "New_v9_Eleganza_2",
+    "uniquePercentage": 87
+  },
+  {
+    "name": "New_v9_Tabletops",
+    "uniquePercentage": 87
+  },
+  {
+    "name": "New_v9_Ambiance",
+    "uniquePercentage": 89
+  },
+  {
+    "name": "New_v9_ExploreHorizon",
+    "uniquePercentage": 89
+  },
+  {
     "name": "New_v9_LexiSpeak",
-    "uniquePercentage": 88
+    "uniquePercentage": 90
   },
   {
     "name": "New_v9_CarRent_BRAZIL",
@@ -165,10 +185,14 @@
   },
   {
     "name": "New_v9_NatalCameras_BRAZIL",
-    "uniquePercentage": 95
+    "uniquePercentage": 94
   },
   {
     "name": "New_v9_ChaMisterioso",
+    "uniquePercentage": 98
+  },
+  {
+    "name": "New_v9_Coworking_BRAZIL",
     "uniquePercentage": 98
   },
   {
@@ -176,7 +200,15 @@
     "uniquePercentage": 98
   },
   {
+    "name": "New_v9_activeattire",
+    "uniquePercentage": 98
+  },
+  {
     "name": "New_v9_bridalblissboutique",
+    "uniquePercentage": 98
+  },
+  {
+    "name": "New_v9_gardendecoworld",
     "uniquePercentage": 98
   },
   {
@@ -197,10 +229,6 @@
   },
   {
     "name": "New_v9_VR_Development_BRAZIL",
-    "uniquePercentage": 99
-  },
-  {
-    "name": "New_v9_activeattire",
     "uniquePercentage": 99
   }
 ]
